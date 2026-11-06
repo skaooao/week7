@@ -1,0 +1,218 @@
+
+* {
+  box-sizing: border-box;
+}
+/* The wall and the main text */
+body {
+  margin: 0;
+  color: #374d3d;
+  background-color: #dce5d2;
+  background-image: url("image/wall-texture.jpg");
+  background-repeat: repeat;
+  font-family: "Baskerville", "Palatino Linotype", Georgia, serif;
+  font-size: 18px;
+}
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 24px 40px;
+  text-align: center;
+}
+.heading {
+  padding-top: 33px;
+}
+h1 {
+  font-family: "Snell Roundhand", "Apple Chancery", cursive;
+  font-size: 42px;
+  font-weight: normal;
+  line-height: 1.4;
+  margin: 15px 0;
+}
+/* City menu */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 24px 0 25px;
+}
+.controls label {
+  font-size: 16px;
+}
+button, select {
+  font-family: inherit;
+  font-size: 16px;
+  color: #42573c;
+  background: #f7f7ec;
+  border: 1px solid #9baa90;
+  border-radius: 8px;
+  padding: 10px 17px;
+}
+select {
+  max-width: 100%;
+}
+button {
+  cursor: pointer;
+}
+button:hover {
+  background: #fffef5;
+}
+
+/* Video sits behind the window picture. */
+.window-section {
+  width: 100%;
+  max-width: 660px;
+  margin: auto;
+  position: relative;
+}
+.window {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 87.7%;
+}
+.view {
+  position: absolute;
+  left: 3.5%;
+  top: 4.1%;
+  width: 93%;
+  height: 91.4%;
+  overflow: hidden;
+  background: #adbfa5;
+}
+video {
+  display: block;
+  height: 100%;
+  width: auto;
+  min-width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.overcast video {
+  filter: grayscale(.85) brightness(.72);
+}
+.frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+#window-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #aab9a3;
+  color: #fffef1;
+  font-size: 14px;
+  padding: 20%;
+  line-height: 1.8;
+}
+.sill {
+  position: absolute;
+  bottom: -5px;
+  left: -1.5%;
+  width: 103%;
+  height: 12px;
+  background: #ddd8cd;
+  border-top: 3px solid #f4f0e8;
+  border-bottom: 3px solid #b5b2a7;
+}
+/* Weather details and buttons */
+.weather-panel {
+  max-width: 660px;
+  margin: 30px auto 0;
+  padding: 21px 12px 12px;
+}
+.weather-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+h2 {
+  font-size: 29px;
+  font-weight: normal;
+  margin: 0;
+}
+#place {
+  font-size: 16px;
+  color: #76816c;
+}
+.readings {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-top: 14px;
+}
+.readings p {
+  font-size: 15px;
+  color: #7c866e;
+  margin: 6px 0;
+}
+.readings strong {
+  font-size: 25px;
+  font-weight: normal;
+  color: #42573c;
+  margin: 0 5px 0 9px;
+}
+.readings span {
+  font-size: 12px;
+}
+.status {
+  font-size: 13px;
+  color: #7b8572;
+  line-height: 1.8;
+  margin: 12px 0;
+}
+.sound-controls {
+  padding-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.sound-controls button {
+  min-height: 44px;
+}
+.exercise {
+  max-width: 660px;
+  margin: 22px auto 0;
+  padding: 0 12px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #42573c;
+}
+
+.weather-credit {
+  margin: 8px auto 0;
+  font-size: 13px;
+}
+.weather-credit a {
+  color: #76816c;
+}
+
+/* Temperature visualization: -20 to 40 degrees across 90 pixels. */
+.temperature-chart { margin: 16px auto 0; width: 55px; font-size: 11px; color: #76816c; }
+.temperature-track { height: 90px; width: 12px; margin: 5px auto; position: relative; background: #c8d3bf; border-radius: 6px; overflow: hidden; }
+#temperature-bar { position: absolute; bottom: 0; width: 100%; height: 0; background: #6b865c; }
+.exercise h3 { font-size: 20px; font-weight: normal; margin: 0 0 8px; }
+.exercise ul { list-style: none; padding: 0; margin: 0; }
+.exercise li { font-size: 16px; margin: 5px 0; }
+/* The class name comes from the API’s is_day value. */
+body.night { background-color: #35463b; background-image: url("image/wall-night.jpg"); color: #e7ebdf; }
+.night #place, .night .readings p, .night .status, .night .temperature-chart, .night .weather-credit a { color: #c0cbbb; }
+.night .readings strong, .night .exercise { color: #e7ebdf; }
+.night .temperature-track { background: #53644e; }
+.night #temperature-bar { background: #bfd0a9; }

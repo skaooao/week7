@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Weather Window</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <section class="heading">
+      <h1>What’s outside the window?</h1>
+    </section>
+    <div class="controls">
+      <label for="city">City</label>
+      <select id="city">
+        <option value="toronto">Toronto</option>
+        <option value="vancouver">Vancouver</option>
+        <option value="montreal">Montreal</option>
+        <option value="beijing">Beijing</option>
+        <option value="shanghai">Shanghai</option>
+        <option value="london">London</option>
+        <option value="paris">Paris</option>
+        <option value="tokyo">Tokyo</option>
+      </select>
+    </div>
+    <section class="window-section">
+      <div class="window">
+        <div class="view">
+          <video id="weather-video" autoplay muted loop preload="metadata"></video>
+          <div id="window-message">Looking outside…</div>
+        </div>
+        <img class="frame" src="image/window.png" alt="An open cream-colored window frame">
+      </div>
+      <div class="sill"></div>
+    </section>
+    <section class="weather-panel">
+      <div class="weather-title"><h2 id="weather-name">Loading weather</h2><span id="place">Toronto</span></div>
+      <div class="readings"><p>Temperature <strong id="temperature">—</strong><span>°C</span></p><p>Precipitation <strong id="rain">—</strong><span>mm</span></p></div>
+      <div class="temperature-chart">
+        <span>40°C</span>
+        <div class="temperature-track"><div id="temperature-bar"></div></div>
+        <span>−20°C</span>
+      </div>
+      <p class="status" id="status">Fetching current weather…</p>
+      <div class="sound-controls"><button id="sound" type="button">♫ Sound on</button><button id="volume-down" type="button">Volume −</button><button id="volume-up" type="button">Volume +</button><button id="pause" type="button">Pause video</button></div>
+    </section>
+    <p class="weather-credit"><a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a></p>
+    <section class="exercise"><h3>Today’s activities</h3><ul id="exercise"><li>Checking the weather…</li></ul></section>
+  </main>
+  <audio id="ambience" loop preload="none"></audio>
+</body>
+</html>
